@@ -44,7 +44,7 @@ resource "aws_security_group" "eks_cluster_sg" {
 resource "aws_eks_cluster" "main" {
   name     = var.cluster_name
   role_arn = aws_iam_role.eks_cluster_role.arn
-  version  = "1.27"  # Specify your desired Kubernetes version
+  version  = "1.28"  # Specify your desired Kubernetes version
 
   vpc_config {
     security_group_ids     = [aws_security_group.eks_cluster_sg.id]
